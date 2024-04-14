@@ -1,0 +1,107 @@
+% -----------------------------  TP gps ----------------------------------
+
+clc, clear all, close all 
+%  Fait par:
+%  ---------
+
+% - BELLAHCENE Kheir Eddine 
+% - Moncef Belkaid Abdenor 
+
+
+%                         Prmotion 2023 - 2024   
+
+
+% Question: 4
+
+% Le nombre le nombre maximal dnétats distincts ne peut pas dépasser  1023 
+%  en éliminant la première état d'état distincts par ce que 
+
+%etat_dist = 2^10 - 1
+
+% Question 5
+tap=[
+
+2 6;     % PRN 01
+3 7;     % PRN 02 
+4 8;     % PRN 03
+5 9;     % PRN 04
+1 9;     % PRN 05
+2 10;    % PRN 06
+1 8;     % PRN 07
+2 9;     % PRN 08
+3 10;    % PRN 09
+2 3;     % PRN 10
+3 4;     % PRN 11
+5 6;     % PRN 12
+6 7;     % PRN 13
+7 8;     % PRN 14
+8 9;     % PRN 15
+9 10;    % PRN 16
+1 4;     % PRN 17
+2 5;     % PRN 18
+3 6;     % PRN 19
+4 7;     % PRN 20
+5 8;     % PRN 21
+6 9;     % PRN 22
+1 3;     % PRN 23
+4 6;     % PRN 24
+5 7;     % PRN 25
+6 8;     % PRN 26
+7 9;     % PRN 27
+8 10;    % PRN 28
+1 6;     % PRN 29
+2 7;     % PRN 30
+3 8;     % PRN 31
+4 9;     % PRN 32
+5 10;    % PRN 33
+4 10;    % PRN 34
+1 7;     % PRN 35
+2 8;     % PRN 36
+4 10];   % PRN 37	
+INIT = [1 1 1 1 1 1 1 1 1 1]
+P1 = [0 0 1 0 0 0 0 0 0 1]
+P2 = [0 1 1 0 0 1 0 1 1 0]
+
+G1 = lfsr(INIT, P1, 1023);
+G2 = lfsr(INIT, P2, 1023);
+
+prn = 2;
+
+selector = tap(prn,:);
+
+code = cacode(tap, 1)';
+
+PRN = repelem(code, 2048);
+PRN = PRN(1023:1023:end);
+figure(1)
+bar(PRN, 'hist')
+
+path = 'SDRSharp_20221105_202954Z_1575420000Hz_IQ.wav'; 
+file_id = fopen(path);  % Ouverture du fichier wav
+fread(file_id, 44);     % Suppression de l entête de 44 octets
+A = fread(file_id, 2e4); % Lecture de 20 000 octets
+N = size(A)
+I = A(1:2:N(1));   % Composante en phase (I)
+Q = A(2:2:N(1));  % Composante en quadrature (Q)
+signal = (I-127)+j*(Q-127); % Centrage et formation du signal complexe
+fclose(file_id);             % Fermeture du fichier wav
+plot(abs(signal))
+
+code = (cacode(tap, 25) - 0.5)';
+PRN = repelem(code, 2048);
+PRN = PRN(1023:1023:end);
+
+l = 1e4;
+N = size(PRN)
+
+time = (1: N(1))/2048000;
+doppler = -1340;
+replica = PRN.*exp(-2*j*pi*doppler*time)';
+
+c = abs(ifft(fft(signal,l).*conj(fft(replica,l))));
+
+[A dt] = max(c);dt = mod(dt, 2048);
+
+figure(2),plot(c)
+
+
