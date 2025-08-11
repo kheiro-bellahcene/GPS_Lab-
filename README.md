@@ -4,7 +4,7 @@
 This project implements a GPS signal processing lab in MATLAB.  
 It includes power calculations, SNR estimation, C/A code generation, Doppler analysis, and correlation with a captured GPS signal.
 
-## Authors
+## Author
 - BELLAHCENE Kheir Eddine  
 
 ## Main Features
