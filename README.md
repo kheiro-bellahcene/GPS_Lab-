@@ -7,6 +7,9 @@ It includes power calculations, SNR estimation, C/A code generation, Doppler ana
 ## Author
 - BELLAHCENE Kheir Eddine  
 
+**University:** Université d'Évry – Paris-Saclay  
+**Program:** M2 SAM – Perception
+
 ## Main Features
 - Convert power from mW to dBm
 - Compute received power using link budget
@@ -28,3 +31,4 @@ It includes power calculations, SNR estimation, C/A code generation, Doppler ana
 - SNR estimation
 - Visible satellites and optimal Doppler shifts
 - Correlation plots between signal and generated codes
+
