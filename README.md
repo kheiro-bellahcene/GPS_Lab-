@@ -7,7 +7,8 @@ It includes **power calculations**, **SNR estimation**, **C/A code generation**,
 ---
 
 ## 👤 Author
-- **BELLAHCENE Kheir Eddine**  
+- **BELLAHCENE Kheir Eddine**
+- **BELKAID Moncef**
 
 **🏛 University:** Université d'Évry – Paris-Saclay  
 **🎓 Program:** M2 SAM – Perception
