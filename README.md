@@ -6,12 +6,15 @@ It includes **power calculations**, **SNR estimation**, **C/A code generation**,
 
 ---
 
-## 👤 Author
-- **BELLAHCENE Kheir Eddine**
-- **BELKAID Moncef**
+## 👤 Authors
+- **BELLAHCENE Kheir Eddine**  
+- **BELKAID Moncef**  
 
 **🏛 University:** Université d'Évry – Paris-Saclay  
-**🎓 Program:** M2 SAM – Perception
+**🎓 Program:** M2 SAM – Perception  
+
+**👨‍🏫 Supervisor:** *Dr. Yann Méneroux*  
+Institut national de l’information géographique et forestière (IGN)  
 
 ---
 
@@ -25,19 +28,17 @@ The figure below summarizes all outputs of the MATLAB GPS lab, including:
 - Doppler variation and optimal search  
 - Correlation step size  
 
-![Correlation Result](https://github.com/kheiro-bellahcene/GPS_Lab-/blob/main/figures/figutre%20_resultat.png)
+![GPS Lab Results](./figures/figutre_resultat.png)
 
 ---
 
 ## ✨ Main Features
--  Convert power from **mW** to **dBm**  
--  Compute **received power** using a link budget  
--  Estimate **SNR** with Boltzmann’s law  
--  Generate GPS **C/A codes** for specific PRNs  
--  Oversample codes to match sample rates  
--  Load and process **I/Q data** from `.wav` files  
--  Perform **Doppler shift search** and correlation  
--  Use `.sp3` ephemeris data to compute **satellite distances**
-
-
+- Convert power from **mW** to **dBm**  
+- Compute **received power** using a link budget  
+- Estimate **SNR** with Boltzmann’s law  
+- Generate GPS **C/A codes** for specific PRNs  
+- Oversample codes to match sample rates  
+- Load and process **I/Q data** from `.wav` files  
+- Perform **Doppler shift search** and correlation  
+- Use `.sp3` ephemeris data to compute **satellite distances**
 
