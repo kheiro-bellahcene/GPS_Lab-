@@ -28,7 +28,7 @@ The figure below summarizes all outputs of the MATLAB GPS lab, including:
 - Doppler variation and optimal search  
 - Correlation step size  
 
-![GPS Lab Results](./figures/figutre_resultat.png)
+![GPS Lab Results](https://github.com/kheiro-bellahcene/GPS_Lab-/blob/main/figures/figutre%20_resultat.png?raw=true)
 
 ---
 
