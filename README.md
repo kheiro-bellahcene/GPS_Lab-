@@ -37,7 +37,8 @@ The figure below summarizes all outputs of the MATLAB GPS lab, including:
 - Estimate **SNR** with Boltzmann’s law  
 - Generate GPS **C/A codes** for specific PRNs  
 - Oversample codes to match sample rates  
-- Load and process **I/Q data** from `.wav` files  
+- Load and process **I/Q data** from `.wav`
+🎵 [Download WAV file](https://github.com/kheiro-bellahcene/GPS_Lab/blob/main/SDRSharp_20221105_202954Z_1575420000Hz_IQ.wav)
 - Perform **Doppler shift search** and correlation  
 - Use `.sp3` ephemeris data to compute **satellite distances**
 
